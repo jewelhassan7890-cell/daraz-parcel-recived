@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daraz Parcel Received</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Daraz Parcel Received</h1>
+
+        <div class="form-group">
+
+            <form>
+
+                <label>Take Photo</label>
+
+                <div class="camera-wrapper">
+
+                    <!-- Camera Icon Button -->
+
+                    <button type="button" id="openCameraBtn" class="camera-icon-btn">
+
+                        📷
+
+                    </button>
+
+                    <!-- Camera Area -->
+
+                    <div class="camera-box" id="cameraBox">
+
+                        <video id="video" autoplay playsinline></video>
+
+                        <canvas id="canvas"></canvas>
+
+                        <button type="button" id="captureBtn">
+                            Capture Photo
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Preview Image -->
+
+                <div class="preview-box">
+
+                    <img id="previewImage" alt="Preview">
+
+                </div>
+
+                <div class="preview-box">
+
+                    <img id="previewImage" alt="Preview">
+
+                </div>
+
+                <!-- Preview Image -->
+
+                <div class="preview-box">
+
+                    <img id="previewImage" src="" alt="Preview Image">
+
+                </div>
+
+                <label for="receiverName">Receiver's Name:</label>
+
+                <input type="text" id="receiverName" name="receiverName" placeholder="Enter receiver's name" required>
+
+                <label for="trackingNumber">Tracking Number:</label>
+
+                <input type="text" id="trackingNumber" name="trackingNumber" placeholder="(Ex: BD-BPO-123456)"
+                    pattern="BD-BPO.*" title="Tracking number must start with BD-BPO" required>
+                <label for="phoneNubmer">Receiver's Phone Number:</label>
+
+                <input type="text" id="phoneNubmer" name="phoneNubmer" placeholder="01XXXXXXXXX" pattern="01[0-9]{9}"
+                    maxlength="11" title="Phone number must start with 01 and be 11 digits long" required>
+
+                <button type="submit">Submit</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
