@@ -1,92 +1,4 @@
-// const photoInput =
-//     document.getElementById("photo");
 
-// const previewImage =
-//     document.getElementById("previewImage");
-
-// const form =
-//     document.querySelector("form");
-
-
-// // Image Preview
-
-// photoInput.addEventListener("change", function () {
-
-//     const file = this.files[0];
-
-//     if (file) {
-
-//         const reader = new FileReader();
-
-//         reader.onload = function (e) {
-
-//             previewImage.src = e.target.result;
-
-//             previewImage.style.display = "block";
-//         };
-
-//         reader.readAsDataURL(file);
-//     }
-// });
-
-
-// // Submit Form
-
-// form.addEventListener("submit", function (e) {
-
-//     e.preventDefault();
-
-//     const file = photoInput.files[0];
-
-//     const reader = new FileReader();
-
-//     reader.onloadend = async function () {
-
-//         const formData = {
-
-//             photo: reader.result,
-
-//             receiverName:
-//                 document.getElementById("receiverName").value,
-
-//             trackingNumber:
-//                 document.getElementById("trackingNumber").value,
-
-//             phoneNubmer:
-//                 document.getElementById("phoneNubmer").value
-//         };
-
-//         try {
-
-//             const response = await fetch(
-//                 "https://script.google.com/macros/s/AKfycbyUnYtIB9vHAHzyhd7D7V0VhhKm-ShxC9cqcTBHl_kpTNfu08VgF6DLWyJy1uxQRCav/exec",
-//                 {
-//                     method: "POST",
-
-//                     body: JSON.stringify(formData)
-//                 }
-//             );
-
-//             const result =
-//                 await response.json();
-
-//             if (result.result === "success") {
-
-//                 alert("Data saved successfully!");
-
-//                 form.reset();
-
-//                 previewImage.style.display = "none";
-//             }
-
-//         } catch (error) {
-
-//             alert("Upload failed!");
-//         }
-//     };
-
-//     reader.readAsDataURL(file);
-// });
 
 const openCameraBtn =
     document.getElementById("openCameraBtn");
@@ -123,7 +35,7 @@ openCameraBtn.addEventListener("click", async function () {
         const stream =
             await navigator.mediaDevices.getUserMedia({
                 video: {
-                    facingMode: "environment"
+                    facingMode: "user"
                 },
                 audio: false
             });
